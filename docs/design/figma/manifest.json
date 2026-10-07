@@ -1,0 +1,353 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "fileKey": "vgFbbxZ1MccQHV3wh2ssNj",
+    "name": "AI小说创作app",
+    "url": "https://www.figma.com/design/vgFbbxZ1MccQHV3wh2ssNj/AI%E5%B0%8F%E8%AF%B4%E5%88%9B%E4%BD%9Capp?node-id=0-1"
+  },
+  "capturedOn": "2026-10-07",
+  "timezone": "Asia/Shanghai",
+  "archiveType": "figma-plugin-api-snapshot",
+  "nativeFigIncluded": false,
+  "nodeCount": 627,
+  "pages": [
+    {
+      "id": "0:1",
+      "name": "Page 1",
+      "topLevelFrameCount": 8
+    }
+  ],
+  "prototype": {
+    "flowStartingPoints": [],
+    "reactionCount": 0
+  },
+  "screens": [
+    {
+      "nodeId": "1:2",
+      "originalName": "AI小说生成应用原型 (Copy)",
+      "archiveName": "desktop-home",
+      "width": 1359,
+      "height": 1373,
+      "sourceUrl": "https://www.figma.com/design/vgFbbxZ1MccQHV3wh2ssNj?node-id=1-2",
+      "preview": "screens/desktop-home.png",
+      "svgAssets": [
+        "assets/desktop-home-01.svg",
+        "assets/desktop-home-02.svg",
+        "assets/desktop-home-03.svg"
+      ],
+      "previewPixelSize": [
+        1360,
+        1373
+      ]
+    },
+    {
+      "nodeId": "1:160",
+      "originalName": "AI小说生成应用原型 (Copy)",
+      "archiveName": "desktop-reader",
+      "width": 2208,
+      "height": 1152,
+      "sourceUrl": "https://www.figma.com/design/vgFbbxZ1MccQHV3wh2ssNj?node-id=1-160",
+      "preview": "screens/desktop-reader.png",
+      "svgAssets": [
+        "assets/desktop-reader-01.svg",
+        "assets/desktop-reader-02.svg",
+        "assets/desktop-reader-03.svg",
+        "assets/desktop-reader-04.svg"
+      ],
+      "previewPixelSize": [
+        2208,
+        1152
+      ]
+    },
+    {
+      "nodeId": "1:256",
+      "originalName": "AI小说生成应用原型 (Copy)",
+      "archiveName": "desktop-worldline",
+      "width": 2208,
+      "height": 1153,
+      "sourceUrl": "https://www.figma.com/design/vgFbbxZ1MccQHV3wh2ssNj?node-id=1-256",
+      "preview": "screens/desktop-worldline.png",
+      "svgAssets": [
+        "assets/desktop-worldline-01.svg",
+        "assets/desktop-worldline-02.svg"
+      ],
+      "previewPixelSize": [
+        2208,
+        1154
+      ]
+    },
+    {
+      "nodeId": "1:389",
+      "originalName": "AI小说生成应用原型 (Copy)",
+      "archiveName": "mobile-home",
+      "width": 402,
+      "height": 1135,
+      "sourceUrl": "https://www.figma.com/design/vgFbbxZ1MccQHV3wh2ssNj?node-id=1-389",
+      "preview": "screens/mobile-home.png",
+      "svgAssets": [
+        "assets/mobile-home-01.svg",
+        "assets/mobile-home-02.svg",
+        "assets/mobile-home-03.svg"
+      ],
+      "previewPixelSize": [
+        506,
+        1135
+      ]
+    },
+    {
+      "nodeId": "1:520",
+      "originalName": "AI小说生成应用原型 (Copy)",
+      "archiveName": "mobile-create-story",
+      "width": 402,
+      "height": 900,
+      "sourceUrl": "https://www.figma.com/design/vgFbbxZ1MccQHV3wh2ssNj?node-id=1-520",
+      "preview": "screens/mobile-create-story.png",
+      "svgAssets": [
+        "assets/mobile-create-story-01.svg",
+        "assets/mobile-create-story-02.svg",
+        "assets/mobile-create-story-03.svg"
+      ],
+      "previewPixelSize": [
+        408,
+        900
+      ]
+    },
+    {
+      "nodeId": "1:617",
+      "originalName": "AI小说生成应用原型 (Copy)",
+      "archiveName": "mobile-reader",
+      "width": 402,
+      "height": 1179,
+      "sourceUrl": "https://www.figma.com/design/vgFbbxZ1MccQHV3wh2ssNj?node-id=1-617",
+      "preview": "screens/mobile-reader.png",
+      "svgAssets": [
+        "assets/mobile-reader-01.svg",
+        "assets/mobile-reader-02.svg",
+        "assets/mobile-reader-03.svg"
+      ],
+      "previewPixelSize": [
+        402,
+        1182
+      ]
+    },
+    {
+      "nodeId": "1:708",
+      "originalName": "AI小说生成应用原型 (Copy)",
+      "archiveName": "mobile-worldline",
+      "width": 402,
+      "height": 1136,
+      "sourceUrl": "https://www.figma.com/design/vgFbbxZ1MccQHV3wh2ssNj?node-id=1-708",
+      "preview": "screens/mobile-worldline.png",
+      "svgAssets": [
+        "assets/mobile-worldline-01.svg"
+      ],
+      "previewPixelSize": [
+        488,
+        1136
+      ]
+    },
+    {
+      "nodeId": "1:906",
+      "originalName": "AI小说生成应用原型 (Copy)",
+      "archiveName": "mobile-import-story",
+      "width": 402,
+      "height": 874,
+      "sourceUrl": "https://www.figma.com/design/vgFbbxZ1MccQHV3wh2ssNj?node-id=1-906",
+      "preview": "screens/mobile-import-story.png",
+      "svgAssets": [
+        "assets/mobile-import-story-01.svg",
+        "assets/mobile-import-story-02.svg",
+        "assets/mobile-import-story-03.svg"
+      ],
+      "previewPixelSize": [
+        408,
+        874
+      ]
+    }
+  ],
+  "completeness": {
+    "propertyReadErrors": [],
+    "rawImages": 0,
+    "assetListsTruncated": false
+  },
+  "limitations": [
+    "This is a read-only repository snapshot, not a native .fig file and not directly importable as a complete Figma document.",
+    "The connector does not support native .fig export or JSON_REST_V1 export in this context; browser export was unavailable.",
+    "Node properties, styled text segments, vector geometry, layout, fills, strokes, styles, variables and available prototype reactions were read through the Plugin API.",
+    "Figma comments, file version history, sharing permissions, fonts and external libraries are not bundled.",
+    "The source has no detected prototype reactions or flow starting points at capture time."
+  ],
+  "checksumScope": "All archived files except manifest.json itself; SHA-256.",
+  "files": [
+    {
+      "path": "assets/desktop-home-01.svg",
+      "sizeBytes": 613,
+      "sha256": "fa08e9fcdcd26642dd31b9f35b9eae464b57c5e85c952b414d382045ac1d6d54"
+    },
+    {
+      "path": "assets/desktop-home-02.svg",
+      "sizeBytes": 583,
+      "sha256": "bbea247c5e7c3e9a545108074ec0beec0ee425a821466a9ec492548b6da72ad3"
+    },
+    {
+      "path": "assets/desktop-home-03.svg",
+      "sizeBytes": 325,
+      "sha256": "ed42dcff7ce5edc0c520f8f7c076ea113ebbb6fa97d5a4fb1966a1aff3f81c3c"
+    },
+    {
+      "path": "assets/desktop-reader-01.svg",
+      "sizeBytes": 1563,
+      "sha256": "64fc9e464b5c1006b8a95f8b7b27d5ad2937f945d99052d18b7b9017ce9e6962"
+    },
+    {
+      "path": "assets/desktop-reader-02.svg",
+      "sizeBytes": 1124,
+      "sha256": "cb3e1b73dac52888e7503acf049cfefbc7c59b38c3c88a324d74d8b1123ec21d"
+    },
+    {
+      "path": "assets/desktop-reader-03.svg",
+      "sizeBytes": 470,
+      "sha256": "22b905f388eccf70f01546611d0dd1385e9ae98bfdfacde19966555c39695708"
+    },
+    {
+      "path": "assets/desktop-reader-04.svg",
+      "sizeBytes": 931,
+      "sha256": "84f2814853c6c1b80d53b8a037e9e2bdc2fc51d4f786f64bf9385a193199d27e"
+    },
+    {
+      "path": "assets/desktop-worldline-01.svg",
+      "sizeBytes": 470,
+      "sha256": "22b905f388eccf70f01546611d0dd1385e9ae98bfdfacde19966555c39695708"
+    },
+    {
+      "path": "assets/desktop-worldline-02.svg",
+      "sizeBytes": 340,
+      "sha256": "2814fd6a270cececbe904679c0cbbcc46ddc0432b9345013f16b2bf063101e79"
+    },
+    {
+      "path": "assets/mobile-create-story-01.svg",
+      "sizeBytes": 470,
+      "sha256": "22b905f388eccf70f01546611d0dd1385e9ae98bfdfacde19966555c39695708"
+    },
+    {
+      "path": "assets/mobile-create-story-02.svg",
+      "sizeBytes": 340,
+      "sha256": "783de1d16b76018bf581f83bf2e935842f0a95d0130518253277480b3aeac65b"
+    },
+    {
+      "path": "assets/mobile-create-story-03.svg",
+      "sizeBytes": 667,
+      "sha256": "851c9f3c66307d3b3ee06532d2f78036d8f83cf961ab57c937fddf829904b877"
+    },
+    {
+      "path": "assets/mobile-home-01.svg",
+      "sizeBytes": 613,
+      "sha256": "fa08e9fcdcd26642dd31b9f35b9eae464b57c5e85c952b414d382045ac1d6d54"
+    },
+    {
+      "path": "assets/mobile-home-02.svg",
+      "sizeBytes": 583,
+      "sha256": "bbea247c5e7c3e9a545108074ec0beec0ee425a821466a9ec492548b6da72ad3"
+    },
+    {
+      "path": "assets/mobile-home-03.svg",
+      "sizeBytes": 325,
+      "sha256": "ed42dcff7ce5edc0c520f8f7c076ea113ebbb6fa97d5a4fb1966a1aff3f81c3c"
+    },
+    {
+      "path": "assets/mobile-import-story-01.svg",
+      "sizeBytes": 470,
+      "sha256": "22b905f388eccf70f01546611d0dd1385e9ae98bfdfacde19966555c39695708"
+    },
+    {
+      "path": "assets/mobile-import-story-02.svg",
+      "sizeBytes": 605,
+      "sha256": "2d0cfd47eaff9d0862395b866d91ba87772ff67e8b28db1dc733ab501f4be2c6"
+    },
+    {
+      "path": "assets/mobile-import-story-03.svg",
+      "sizeBytes": 344,
+      "sha256": "93b0112a44ca5f4579c3c150cb14882f6dd0fa25fd7a7891ce7a8f72191048d9"
+    },
+    {
+      "path": "assets/mobile-reader-01.svg",
+      "sizeBytes": 1563,
+      "sha256": "64fc9e464b5c1006b8a95f8b7b27d5ad2937f945d99052d18b7b9017ce9e6962"
+    },
+    {
+      "path": "assets/mobile-reader-02.svg",
+      "sizeBytes": 1124,
+      "sha256": "cb3e1b73dac52888e7503acf049cfefbc7c59b38c3c88a324d74d8b1123ec21d"
+    },
+    {
+      "path": "assets/mobile-reader-03.svg",
+      "sizeBytes": 470,
+      "sha256": "22b905f388eccf70f01546611d0dd1385e9ae98bfdfacde19966555c39695708"
+    },
+    {
+      "path": "assets/mobile-worldline-01.svg",
+      "sizeBytes": 470,
+      "sha256": "22b905f388eccf70f01546611d0dd1385e9ae98bfdfacde19966555c39695708"
+    },
+    {
+      "path": "observed-values.json",
+      "sizeBytes": 4079,
+      "sha256": "be9040c098d132d9be8f190c604eec64a631559772427239af6bd03094881df5"
+    },
+    {
+      "path": "README.md",
+      "sizeBytes": 5650,
+      "sha256": "c376c689ce0b1fbd10b9c8ff12867b0a2e41d1705f51083d31f2ea401be6d316"
+    },
+    {
+      "path": "screens/desktop-home.png",
+      "sizeBytes": 259011,
+      "sha256": "4b2a89c4e0bb01717c12cc7d7720af63fdf923a18ebad2d7b6a3b0e63c1cc2f3"
+    },
+    {
+      "path": "screens/desktop-reader.png",
+      "sizeBytes": 82638,
+      "sha256": "dc84d481462e94577850d55a0f0d93c35a0b6ecbd0a1ec4eb1fc059eca244568"
+    },
+    {
+      "path": "screens/desktop-worldline.png",
+      "sizeBytes": 121377,
+      "sha256": "9ef57ade6a2b920d5a2942853fc3bb43d49d20eaf7ccba1a71e5f571dacd28fc"
+    },
+    {
+      "path": "screens/mobile-create-story.png",
+      "sizeBytes": 43579,
+      "sha256": "d2fded5f30586a687ed904b25e8fbc61adc79aa4c9ae49c857b243d819a14a1c"
+    },
+    {
+      "path": "screens/mobile-home.png",
+      "sizeBytes": 147080,
+      "sha256": "7075a3088cf0b037e07928b0130a6f7f43366a510cfb5b6cb076f41a86313678"
+    },
+    {
+      "path": "screens/mobile-import-story.png",
+      "sizeBytes": 45242,
+      "sha256": "e32f9cfc2d74d2b12a39a1b010bd354f1b23ab52752f93ed3911bf05eb6215bd"
+    },
+    {
+      "path": "screens/mobile-reader.png",
+      "sizeBytes": 64997,
+      "sha256": "444e8a3952a55bb305503bd1dbed991f23cd0f05b544334f6014ea870fd33328"
+    },
+    {
+      "path": "screens/mobile-worldline.png",
+      "sizeBytes": 91234,
+      "sha256": "2e7dadc7938c40f6cff7d7b8004ffa8d74f11f07308b8a368c72de134409e9de"
+    },
+    {
+      "path": "screens.json",
+      "sizeBytes": 18361,
+      "sha256": "e0d85943679bd1360b8375f17b8858d6cb85864192d36ae498131556576fee94"
+    },
+    {
+      "path": "source.snapshot.json",
+      "sizeBytes": 1318487,
+      "sha256": "aeba94f207a7c9115c3aa581c8b10a1c830954515d3e33da41954f804e792e2b"
+    }
+  ]
+}

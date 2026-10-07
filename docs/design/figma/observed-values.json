@@ -1,0 +1,253 @@
+{
+  "kind": "observed-design-values",
+  "capturedOn": "2026-10-07",
+  "note": "Values observed in source nodes; these are not an approved or semantic design-token system.",
+  "fonts": [
+    {
+      "family": "Outfit",
+      "style": "Regular",
+      "textNodeCount": 68
+    },
+    {
+      "family": "Noto Serif SC",
+      "style": "Medium",
+      "textNodeCount": 41
+    },
+    {
+      "family": "Noto Serif SC",
+      "style": "Regular",
+      "textNodeCount": 40
+    },
+    {
+      "family": "Outfit",
+      "style": "SemiBold",
+      "textNodeCount": 12
+    },
+    {
+      "family": "Outfit",
+      "style": "Medium",
+      "textNodeCount": 6
+    },
+    {
+      "family": "Noto Serif SC",
+      "style": "SemiBold",
+      "textNodeCount": 2
+    },
+    {
+      "family": "Georgia",
+      "style": "Medium",
+      "textNodeCount": 2
+    }
+  ],
+  "solidFillColors": [
+    {
+      "hex": "#201E1B",
+      "opacity": 1,
+      "nodeFillCount": 72
+    },
+    {
+      "hex": "#5F51A6",
+      "opacity": 1,
+      "nodeFillCount": 59
+    },
+    {
+      "hex": "#79736A",
+      "opacity": 1,
+      "nodeFillCount": 41
+    },
+    {
+      "hex": "#F6F3EC",
+      "opacity": 1,
+      "nodeFillCount": 26
+    },
+    {
+      "hex": "#FFFFFF",
+      "opacity": 1,
+      "nodeFillCount": 19
+    },
+    {
+      "hex": "#FFFDFA",
+      "opacity": 1,
+      "nodeFillCount": 15
+    },
+    {
+      "hex": "#DCD6CB",
+      "opacity": 1,
+      "nodeFillCount": 7
+    },
+    {
+      "hex": "#FFFFFF",
+      "opacity": 0.4399999976158142,
+      "nodeFillCount": 4
+    },
+    {
+      "hex": "#AAA39B",
+      "opacity": 1,
+      "nodeFillCount": 4
+    },
+    {
+      "hex": "#FFFDFA",
+      "opacity": 0.6399999856948853,
+      "nodeFillCount": 3
+    },
+    {
+      "hex": "#EAE5F7",
+      "opacity": 1,
+      "nodeFillCount": 3
+    },
+    {
+      "hex": "#F3F0FA",
+      "opacity": 1,
+      "nodeFillCount": 3
+    },
+    {
+      "hex": "#E9E0D1",
+      "opacity": 1,
+      "nodeFillCount": 2
+    },
+    {
+      "hex": "#5F51A6",
+      "opacity": 0.0430000014603138,
+      "nodeFillCount": 2
+    },
+    {
+      "hex": "#D6CDF1",
+      "opacity": 1,
+      "nodeFillCount": 2
+    },
+    {
+      "hex": "#ECE7DC",
+      "opacity": 1,
+      "nodeFillCount": 2
+    },
+    {
+      "hex": "#F6F3EC",
+      "opacity": 0.9100000262260437,
+      "nodeFillCount": 2
+    },
+    {
+      "hex": "#AAA49C",
+      "opacity": 1,
+      "nodeFillCount": 2
+    },
+    {
+      "hex": "#AAA39A",
+      "opacity": 1,
+      "nodeFillCount": 2
+    },
+    {
+      "hex": "#A9A39A",
+      "opacity": 1,
+      "nodeFillCount": 1
+    }
+  ],
+  "fontSizes": [
+    {
+      "px": 7,
+      "textNodeCount": 1
+    },
+    {
+      "px": 8,
+      "textNodeCount": 4
+    },
+    {
+      "px": 9,
+      "textNodeCount": 21
+    },
+    {
+      "px": 10,
+      "textNodeCount": 19
+    },
+    {
+      "px": 11,
+      "textNodeCount": 22
+    },
+    {
+      "px": 12,
+      "textNodeCount": 7
+    },
+    {
+      "px": 13,
+      "textNodeCount": 16
+    },
+    {
+      "px": 14,
+      "textNodeCount": 25
+    },
+    {
+      "px": 15,
+      "textNodeCount": 2
+    },
+    {
+      "px": 16,
+      "textNodeCount": 23
+    },
+    {
+      "px": 17,
+      "textNodeCount": 7
+    },
+    {
+      "px": 18,
+      "textNodeCount": 1
+    },
+    {
+      "px": 19,
+      "textNodeCount": 2
+    },
+    {
+      "px": 21,
+      "textNodeCount": 1
+    },
+    {
+      "px": 24,
+      "textNodeCount": 3
+    },
+    {
+      "px": 26,
+      "textNodeCount": 3
+    },
+    {
+      "px": 27,
+      "textNodeCount": 4
+    },
+    {
+      "px": 30,
+      "textNodeCount": 2
+    },
+    {
+      "px": 31,
+      "textNodeCount": 1
+    },
+    {
+      "px": 36,
+      "textNodeCount": 1
+    },
+    {
+      "px": 38,
+      "textNodeCount": 2
+    },
+    {
+      "px": 43,
+      "textNodeCount": 1
+    },
+    {
+      "px": 78,
+      "textNodeCount": 1
+    },
+    {
+      "px": 170,
+      "textNodeCount": 1
+    },
+    {
+      "px": 310,
+      "textNodeCount": 1
+    }
+  ],
+  "localStyleCounts": {
+    "paints": 0,
+    "text": 0,
+    "effects": 0,
+    "grids": 0
+  },
+  "variableCount": 0
+}

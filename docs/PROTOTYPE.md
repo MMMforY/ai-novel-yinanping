@@ -1,5 +1,13 @@
 # 产品原型与交互逻辑
 
+## 当前设计文件
+
+[Figma 源文件](https://www.figma.com/design/vgFbbxZ1MccQHV3wh2ssNj/AI%E5%B0%8F%E8%AF%B4%E5%88%9B%E4%BD%9Capp?node-id=0-1) 的本地快照见 [设计归档与画板索引](./design/figma/README.md)。
+
+截至 2026-10-07，已有 8 张桌面 / 手机画板，但下文定义的 Frame 05（选中文字）和 Frame 06（改写 Bottom Sheet）尚未体现，原型连线也未建立。以下内容继续作为待完成的交互目标。
+
+同日，本地网页版已按下文目标补齐选区、改写弹层、世界线与继续阅读交互。Figma 源文件未修改；网页的实现与验收见 [LOCAL_MVP.md](./LOCAL_MVP.md)。
+
 ## 原型目标
 
 第一版 Figma 不需要把整个产品做完整。
