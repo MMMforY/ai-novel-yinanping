@@ -50,7 +50,7 @@ if not owned:
     with socket.socket() as probe:
         probe.bind(("127.0.0.1", port))
 compose("config", "--quiet")
-compose("build", "api")
+compose("build", "api", "web")
 compose("run", "--rm", "--no-deps", "--entrypoint", "python", "api",
         "-m", "unittest", "discover", "-s", "backend/tests", "-v")
 compose("up", "-d", "--wait", "--wait-timeout", "90")
