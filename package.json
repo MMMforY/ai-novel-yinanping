@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "node scripts/dev.mjs",
+    "dev:python": "node scripts/dev-python.mjs",
+    "test:python": "uv run --no-project --python 3.12 --with-requirements backend/requirements.txt python -m unittest discover -s backend/tests -v",
     "start": "node --import tsx server/index.ts",
     "typecheck": "tsc --noEmit",
     "build": "npm run typecheck && vite build",

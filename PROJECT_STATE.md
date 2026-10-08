@@ -1,5 +1,7 @@
 # PROJECT_STATE
 
+2026-10-08：新增兼容现有前端的 FastAPI 后端、独立联调 HTML、OpenAPI 与人工接口文档，以及隔离的 Docker Compose 发布方式。初步服务采用 SSH 隧道访问，详情见 [部署说明](./docs/DEPLOYMENT.md)。
+
 ## 当前状态
 
 项目处于 **本地网页版 MVP / 核心体验验证阶段**。

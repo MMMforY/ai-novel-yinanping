@@ -8,6 +8,16 @@
 
 已实现「迭页」的本地响应式网页：导入 / 创建故事 → 阅读 → 选中文字 → 改写这一幕 → 保存世界线 → 继续阅读 / 返回原版。
 
+### FastAPI 初步部署与联调
+
+新增独立 Python 3.12 / FastAPI 后端，兼容原有生成接口。生产发布使用 Caddy + FastAPI 两个容器，默认通过 SSH 隧道访问 localhost:18787；故事依然保存在各自浏览器。
+
+- [部署、启动和隔离说明](./docs/DEPLOYMENT.md)
+- [接口文档](./docs/API.md)
+- [独立联调 HTML](./public/integration.html)：部署后打开 /integration.html
+
+Python 开发环境准备完成后可用 `npm run dev:python` 同时启动前后端；原有 `npm run dev` 保留 Node 版本。当前未配置模型凭据，初步部署使用演示模式。
+
 ### 启动
 
 使用 Node.js **22.22.2 或更新版本**（本次验证环境为 22.23.1）：

@@ -1,0 +1,62 @@
+name: dieye-mvp
+services:
+  api:
+    image: dieye-mvp-api:${APP_RELEASE:-local}
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    env_file: .env
+    environment:
+      APP_RELEASE: ${APP_RELEASE:-local}
+    restart: unless-stopped
+    init: true
+    mem_limit: 512m
+    memswap_limit: 512m
+    cpus: 0.50
+    pids_limit: 128
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,mode=1777
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health', timeout=3)"]
+      interval: 30s
+      timeout: 5s
+      start_period: 10s
+      retries: 3
+    logging:
+      driver: json-file
+      options: {max-size: "5m", max-file: "2"}
+  web:
+    image: caddy:2-alpine@sha256:d8542f48d34a9cf4e4c11a478865229840e87e4c96ea3f439101f31a5d35f75f
+    user: "10001:10001"
+    environment:
+      XDG_DATA_HOME: /tmp/caddy/data
+      XDG_CONFIG_HOME: /tmp/caddy/config
+    ports:
+      - "127.0.0.1:${DIEYE_PORT:-18787}:8080"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ../webdist:/srv/web:ro
+    depends_on:
+      api: {condition: service_healthy}
+    restart: unless-stopped
+    init: true
+    mem_limit: 128m
+    memswap_limit: 128m
+    cpus: 0.25
+    pids_limit: 64
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,mode=1777
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    logging:
+      driver: json-file
+      options: {max-size: "5m", max-file: "2"}

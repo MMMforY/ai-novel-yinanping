@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>迭页 · 前后端联调</title>
+  <style>
+    :root{color-scheme:light;--paper:#f6f3ec;--ink:#201e1b;--purple:#5f51a6}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,"Microsoft YaHei",sans-serif}
+    main{max-width:1100px;margin:auto;padding:40px 24px 70px}h1,h2{font-family:"Noto Serif SC","Songti SC",SimSun,serif;font-weight:500}
+    h1{font-size:36px;margin:10px 0 16px}h2{font-size:23px}.label{color:var(--purple);font-size:12px;letter-spacing:2px}
+    p{line-height:1.8;color:#68635b}a{color:var(--purple)}.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+    .panel{padding:24px;border:1px solid #e2dcd0;background:#fffdf9;border-radius:12px;margin-top:24px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}label{display:block;font-size:14px;margin-bottom:10px}
+    input,textarea,button{font:inherit}input,textarea{width:100%;padding:12px;background:#f8f6f0;border:1px solid #d9d2c6;border-radius:6px;color:var(--ink)}
+    textarea{min-height:380px;resize:vertical;line-height:1.65;font-family:Consolas,monospace;font-size:13px}
+    button{border:1px solid #ded6e8;border-radius:6px;background:white;color:var(--purple);padding:10px 15px;cursor:pointer}
+    button.primary{background:var(--purple);color:white;border-color:var(--purple)}button:disabled{opacity:.5;cursor:wait}
+    button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #c2b5ed;outline-offset:2px}
+    pre{white-space:pre-wrap;overflow-wrap:anywhere;max-height:430px;overflow:auto;font-size:13px;line-height:1.7}
+    #status{min-height:26px;margin-top:14px;color:var(--purple)}#status[data-error=true]{color:#a54136}
+    #novel{white-space:pre-wrap;line-height:2.1;font-size:18px;font-family:"Noto Serif SC","Songti SC",SimSun,serif;max-width:40em;margin:auto}
+    #mode{font-size:13px;background:#eee8fa;border-radius:30px;padding:6px 12px;color:var(--purple)}
+    .small{font-size:13px}.flex{flex:1;min-width:220px}details{margin-top:18px}summary{cursor:pointer;color:var(--purple)}
+    @media(max-width:720px){main{padding:26px 16px}.grid{grid-template-columns:1fr}.panel{padding:18px}h1{font-size:29px}}
+  </style>
+</head>
+<body>
+<main>
+  <span class="label">DIEYE / INTEGRATION</span>
+  <h1>迭页 · 前后端联调</h1>
+  <p>验证创建、改写和续写的请求与响应。模型密钥由服务端配置，此页面不接收密钥。故事版本保存由正式阅读器负责。</p>
+  <div class="row"><a href="/">打开阅读器</a><a href="/api/docs" target="_blank" rel="noreferrer">交互接口文档</a><a href="/api/openapi.json" target="_blank" rel="noreferrer">OpenAPI JSON</a><a href="/api-docs.md">接口说明</a><span id="mode">尚未连接</span></div>
+  <section class="panel">
+    <div class="row"><div class="flex"><label for="base">API 地址</label><input id="base" type="url" spellcheck="false"></div><button id="connect">检查连接</button></div>
+    <p class="small">部署页面默认同源访问。跨域联调需把当前页面来源加入服务端 SITE_ORIGINS。请通过 HTTP 服务打开，file:// 页面不在默认允许范围内。</p>
+    <pre id="config" aria-label="配置响应"></pre>
+  </section>
+  <div class="grid">
+    <section class="panel">
+      <h2>请求</h2>
+      <div class="row"><button data-example="create">加载创建样例</button><button data-example="rewrite">加载改写样例</button><button data-example="continue">加载续写样例</button></div>
+      <p class="small">改写默认 minimal；可将 mode 改为 reasonable 或 new-world。选区位置依据 before、selected 的 UTF-16 长度计算。</p>
+      <label for="payload">请求 JSON</label><textarea id="payload" spellcheck="false"></textarea>
+      <div class="row" style="margin-top:16px"><button id="send" class="primary">发送生成请求</button><button id="retry">重试当前请求</button><button id="cancel" disabled>取消</button></div>
+      <div id="status" role="status" aria-live="polite"></div>
+    </section>
+    <section class="panel">
+      <h2>响应</h2><pre id="response" aria-label="生成响应">等待请求。</pre>
+      <button id="continue-result" disabled>把结果作为续写上下文</button>
+      <details><summary>接口约定与限制</summary>
+        <p class="small">GET /api/config 返回 mode、ready、message、contextChars。POST /api/generate 返回 title、text、mode、可选 model；失败返回 error，不回退到演示结果。</p>
+        <p class="small">operation：create / rewrite / continue；mode：minimal / reasonable / new-world。意图最多 600 UTF-16 单位，选区 2,000，背景 1,200，全部正文 120,000。一次生成返回最多 12,000。</p>
+        <p class="small">400 输入错误；403 来源未允许；413 体积超限；415 请求类型错误；429 达到并发或频率限制；502 模型错误；503 配置不完整。输入和上次成功的正文会保留。</p>
+      </details>
+    </section>
+  </div>
+  <section class="panel"><div class="row"><h2>正文预览</h2><span id="result-mode" class="small"></span></div><div id="novel">生成成功后，正文会呈现在这里。</div></section>
+</main>
+<script>
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const examples = {
+    create:{operation:'create',title:'',intent:'我想看一个收到未来来信的大学生',mode:'reasonable',context:{before:'',selected:'',after:'',background:'',genres:['悬疑']}},
+    rewrite:{operation:'rewrite',versionId:'integration-original',title:'雨停之前',intent:'让苏晚活下来',mode:'minimal',context:{before:'苏晚站在栈桥尽头。林舟向前迈了一步，却被推车挡住了去路。\n\n',selected:'栈桥从中间断开，苏晚落入了黑色的水里。',after:'搜救队找了整整一夜，她再也没有回到岸上。',background:'原创演示：林舟与苏晚寻找渡口事故的真相。',genres:[]}},
+    continue:{operation:'continue',versionId:'integration-worldline',title:'雨停之前',intent:'',mode:'reasonable',context:{before:'苏晚被拉回了岸上。他们打开铁盒，决定一起去灯塔寻找答案。',selected:'',after:'',background:'原创演示故事。',genres:[]}}
+  };
+  let controller=null, lastResult=null, lastRequest=null, requestId=0;
+  $('base').value=location.protocol==='file:'?'http://localhost:18787':location.origin;
+  $('payload').value=JSON.stringify(examples.rewrite,null,2);
+  function base(){const url=new URL($('base').value);if(!['http:','https:'].includes(url.protocol))throw new Error('请填写 HTTP 或 HTTPS 地址。');return url.href.replace(/\/$/,'');}
+  function status(text,error=false){$('status').textContent=text;$('status').dataset.error=String(error);}
+  function busy(value){for(const b of document.querySelectorAll('#send,#retry,#connect,[data-example]'))b.disabled=value;$('cancel').disabled=!value;}
+  document.querySelectorAll('[data-example]').forEach(button=>button.addEventListener('click',()=>{$('payload').value=JSON.stringify(examples[button.dataset.example],null,2);status('样例已载入，可编辑 JSON 后发送。');}));
+  $('connect').addEventListener('click',async()=>{
+    $('connect').disabled=true;
+    try{const response=await fetch(base()+'/api/config');const data=await response.json();if(!response.ok)throw new Error(data.error||'连接失败');
+      $('config').textContent=JSON.stringify(data,null,2);$('mode').textContent=data.mode==='demo'?'演示模式':data.ready?'真实模型已配置':'模型待配置';status(data.message,!data.ready);
+    }catch(error){status(error.message,true);}finally{$('connect').disabled=false;}
+  });
+  async function send(){
+    if(controller)return;
+    let body,url;
+    try{body=JSON.parse($('payload').value);url=base()+'/api/generate';}catch(error){status('请求无法读取：'+error.message,true);return;}
+    const id=++requestId;controller=new AbortController();busy(true);status('正在生成；已有输入与正文保留。');
+    const timeout=setTimeout(()=>controller&&controller.abort(),100000);
+    try{
+      const response=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),signal:controller.signal});
+      const data=await response.json();if(id!==requestId)return;
+      $('response').textContent=JSON.stringify({httpStatus:response.status,...data},null,2);
+      if(!response.ok)throw new Error(data.error||'请求失败');
+      if(typeof data.text!=='string'||!data.text.trim()||!['demo','live'].includes(data.mode))throw new Error('响应不符合正文协议。');
+      lastResult=data;lastRequest=body;$('novel').textContent=data.text;$('result-mode').textContent=data.mode==='demo'?'演示生成 · 固定模板':'真实模型生成';
+      $('continue-result').disabled=false;status('生成成功，HTTP '+response.status+'。');
+    }catch(error){if(id===requestId)status(error.name==='AbortError'?'已取消或等待超时；输入和上次正文已保留。':error.message,true);}
+    finally{clearTimeout(timeout);if(id===requestId){controller=null;busy(false);}}
+  }
+  $('send').addEventListener('click',send);$('retry').addEventListener('click',send);
+  $('cancel').addEventListener('click',()=>controller&&controller.abort());
+  $('continue-result').addEventListener('click',()=>{
+    if(!lastResult||controller)return;
+    const context=lastRequest.context;
+    const before=lastRequest.operation==='create'?lastResult.text:lastRequest.operation==='rewrite'?context.before+lastResult.text:context.before+'\n\n'+lastResult.text;
+    $('payload').value=JSON.stringify({operation:'continue',versionId:'integration-worldline',title:lastResult.title,intent:'',mode:'reasonable',context:{before,selected:'',after:'',background:context.background,genres:[]}},null,2);
+    status('续写请求已载入；需要干预未来时可填写 intent。');
+  });
+</script>
+</body>
+</html>
