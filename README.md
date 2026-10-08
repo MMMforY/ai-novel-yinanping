@@ -15,6 +15,7 @@
 - [部署、启动和隔离说明](./docs/DEPLOYMENT.md)
 - [接口文档](./docs/API.md)
 - [独立联调 HTML](./public/integration.html)：部署后打开 /integration.html
+- [实际部署验收记录](./docs/DEPLOYMENT_VERIFICATION.md)：服务器版本的桌面和手机测试 19 项通过，1 项跳过
 
 Python 开发环境准备完成后可用 `npm run dev:python` 同时启动前后端；原有 `npm run dev` 保留 Node 版本。当前未配置模型凭据，初步部署使用演示模式。
 
@@ -45,7 +46,7 @@ LLM_API_KEY=your-api-key
 
 默认请求使用 `max_tokens`；需要其他参数的模型可设置 `LLM_TOKEN_PARAMETER=max_completion_tokens`。模型须按提示词输出含 `title`、`text` 的 JSON 对象。接口错误、超时和无效输出都会显示错误，不会自动切回演示模式。部分填写模型配置也不会进入演示模式。
 
-密钥仅由本地 Node 服务读取；`.env` 已被 Git 忽略。生成时，相关上下文会发送给所配置的模型服务。演示模式使用预设片段，不能用来评价真实模型的叙事质量。
+密钥仅由服务端读取；`.env` 已被 Git 忽略。Node 和 FastAPI 本地开发模式均读取仓库根目录 `.env`，服务器发布配置见部署说明。生成时，相关上下文会发送给所配置的模型服务。演示模式使用预设片段，不能用来评价真实模型的叙事质量。
 
 ### 保存与限制
 
